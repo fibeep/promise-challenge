@@ -48,7 +48,7 @@ function spacer(str){
       for (letter in str) {
         new_str = new_str + " " + str[letter]
       }
-      if (new_str === "string"){
+      if (new_str != null){
         resolve("The spaced word is: " + new_str)
       } else {
         reject("You need a string please!")
