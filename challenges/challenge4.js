@@ -8,6 +8,7 @@
  *    block #1 and run the code. What happens? (HINT: You may need to run
  *    `npm init` first.)
  * 
+ * We get an error
  * 
  * 2. Sometimes, when making API calls, we want to make a bunch of calls in
  *    parallel and don't care in what order they resolve. (In other words, they
@@ -65,13 +66,13 @@ const person3Promise = makePromise('https://swapi.co/api/people/3')
 // });
 
 /* Uncomment me! #2 */
-// Promise.all([person1Promise, person2Promise, person3Promise])
-//     .then(function(results) {
-//         for (let i = 0; i < 3; i++) {
-//             console.log(`Person ${i+1}'s name: ${results[i].name}`)
-//         }
-//     })
-//     .catch(function(err) {
-//         console.log('Got an error!')
-//         console.log(err)
-//     })
+Promise.all([person1Promise, person2Promise, person3Promise])
+    .then(function(results) {
+        for (let i = 0; i < 3; i++) {
+            console.log(`Person ${i+1}'s name: ${results[i].name}`)
+        }
+    })
+    .catch(function(err) {
+        console.log('Got an error!')
+        console.log(err)
+    })
